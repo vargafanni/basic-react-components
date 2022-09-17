@@ -1,0 +1,16 @@
+button {
+  padding: 0.5em 0.75em;
+  width: fit-content;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+  line-height: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-collapse: collapse;
+
+  &.yellow {
+    background-color: var(--yellow);
+  }
+}

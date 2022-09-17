@@ -14,7 +14,7 @@ class Button extends React.Component<
   render(): JSX.Element {
     const {
       colorShema = EColors.GRAY,
-      children,
+      children = this.props.text,
       className = '',
       text,
       ...rest
