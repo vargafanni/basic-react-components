@@ -1,0 +1,109 @@
+@import "../index.scss";
+table {
+  border: 1px solid var(--gray);
+  color: var(--dark-gray);
+  border-collapse: collapse;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  caption {
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        @include title;
+        float: left;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  thead tr {
+    background-color: var(--light-gray);
+  }
+
+  tbody tr {
+    background-color: var(--light-gray);
+    padding: 0.35em;
+
+    &:nth-child(odd) {
+      background-color: var(--whitesmoke);
+    }
+  }
+
+  tr {
+    border: 1px solid var(--gray);
+  }
+
+  th,
+  td {
+    padding: 0.625em;
+    text-align: center;
+    white-space: nowrap;
+    &.right {
+      text-align: right;
+    }
+    &.left {
+      text-align: left;
+    }
+    &.center {
+      text-align: center;
+    }
+  }
+
+  th {
+    font-size: small;
+    font-weight: bold;
+    padding: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  table {
+    border: 0;
+
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tbody tr {
+      display: block;
+      margin-bottom: 0.625em;
+      &:nth-child(odd) {
+        background-color: var(--light-gray);
+      }
+    }
+
+    td {
+      border-bottom: 1px solid var(--gray);
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+      height: fit-content;
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    td.right,
+    td.left {
+      text-align: right;
+    }
+  }
+}

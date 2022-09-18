@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
 import EColors from "../EColors";
+import "./button.scss";
 
 interface IButtonparams extends ButtonHTMLAttributes<HTMLButtonElement> {
   colorShema?: EColors;
