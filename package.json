@@ -1,7 +1,7 @@
 {
   "name": "@vargafanni/basic-react-components",
   "publishConfig": {
-    "registry": "https://github.com/vargafanni"
+    "registry": "https://registry.npmjs.org"
   },
   "version": "1.0.0",
   "description": "My own basic react components library",
