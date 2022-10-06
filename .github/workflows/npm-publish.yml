@@ -11,23 +11,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.0
         with:
           node-version: 16
       - run: npm ci
+      - run: npm run rollup
       - run: npm test
 
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.0
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.npmjs.org/vargafanni
       - run: npm ci
+      - run: npm run rollup
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
